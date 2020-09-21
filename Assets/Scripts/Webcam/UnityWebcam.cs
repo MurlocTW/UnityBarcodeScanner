@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using Wizcorp.Utils.Logger;
 
 namespace BarcodeScanner.Webcam
@@ -48,6 +48,7 @@ namespace BarcodeScanner.Webcam
 		public void Play()
 		{
 			Webcam.Play();
+			Debug.Log("Webcam.Play()");
 		}
 
 		public void Stop()

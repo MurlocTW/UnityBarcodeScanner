@@ -7,7 +7,14 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/Samples/Boot.unity
+    guid: e0a52783a8802784296549d34db8f6d6
   - enabled: 1
     path: Assets/Samples/Simple/SimpleDemo.unity
+    guid: 93c1548587961484cb231b7f9c4a0734
   - enabled: 1
     path: Assets/Samples/Continuous/ContinuousDemo.unity
+    guid: 744a9a2b17efe6e48b5b541a2e5c70c1
+  - enabled: 1
+    path: Assets/Samples/Moblie/MoblieDemo.unity
+    guid: 6fc12bcaad4dd874a813d9f34d7987e2
+  m_configObjects: {}

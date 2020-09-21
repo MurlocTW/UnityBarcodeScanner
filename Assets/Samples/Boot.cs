@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -38,6 +38,11 @@ public class Boot : MonoBehaviour
 	public void OnContinuous()
 	{
 		SceneManager.LoadScene("ContinuousDemo");
+	}
+
+	public void OnClickMobile()
+	{
+		SceneManager.LoadScene("MoblieDemo");
 	}
 
 	#endregion

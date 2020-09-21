@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 using UnityEngine;
 
@@ -31,8 +31,19 @@ namespace BarcodeScanner
 			ParserAutoRotate = true;
 			ParserTryInverted = true;
 			ParserTryHarder = false;
-			
+
+#if UNITY_EDITOR
 			WebcamDefaultDeviceName = (WebCamTexture.devices.Length > 0) ? WebCamTexture.devices.First().name : "";
+#else
+			WebcamDefaultDeviceName = "";
+			for (int i = 0; i < WebCamTexture.devices.Length; i++)
+			{
+				WebCamDevice device = WebCamTexture.devices[i];
+				if (!device.isFrontFacing)
+					WebcamDefaultDeviceName = device.name;
+			}
+#endif
+
 			WebcamRequestedWidth = 512;
 			WebcamRequestedHeight = 512;
 			WebcamFilterMode = FilterMode.Trilinear;
@@ -40,15 +51,15 @@ namespace BarcodeScanner
 			// Device dependent settings
 
 			// Disable background thread for webgl : Thread not supported
-			#if UNITY_WEBGL
+#if UNITY_WEBGL
 			ScannerDecodeInterval = 0.5f;
 			ScannerBackgroundThread = false;
-			#endif
+#endif
 
 			// Enable only for desktop usage : heavy CPU consumption
-			#if UNITY_STANDALONE || UNITY_EDITOR
+#if UNITY_STANDALONE || UNITY_EDITOR
 			ParserTryHarder = true;
-			#endif
+#endif
 		}
 	}
 }

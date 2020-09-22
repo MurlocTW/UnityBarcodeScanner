@@ -80,7 +80,7 @@ public class QRCodeManager : MonoBehaviour
 				float scaleY = -1;
 #endif
 				float orient = BarcodeScanner.Camera.GetRotation() - 90.0f;
-				float Ratio = (float)BarcodeScanner.Camera.Height / (float)BarcodeScanner.Camera.;
+				float Ratio = (float)BarcodeScanner.Camera.RequestedHeight / (float)BarcodeScanner.Camera.RequestedWidth;
 				scanImage.rectTransform.localEulerAngles = new Vector3(0, 0, orient);
 				scanImage.rectTransform.localScale = new Vector3(Ratio, scaleY, 1);
 #endif

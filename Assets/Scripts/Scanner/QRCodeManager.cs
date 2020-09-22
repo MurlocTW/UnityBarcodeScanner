@@ -70,8 +70,6 @@ public class QRCodeManager : MonoBehaviour
 		BarcodeScanner.OnReady += (sender, arg) => {
 			// Set Orientation & Texture
 
-
-
 #if UNITY_EDITOR
 			scanImage.rectTransform.localEulerAngles = BarcodeScanner.Camera.GetEulerAngles();
 #else
@@ -82,17 +80,11 @@ public class QRCodeManager : MonoBehaviour
 				float scaleY = -1;
 #endif
 				float orient = BarcodeScanner.Camera.GetRotation() - 90.0f;
-				float Ratio = (float)BarcodeScanner.Camera.Height / (float)BarcodeScanner.Camera.Width;
+				float Ratio = (float)BarcodeScanner.Camera.Height / (float)BarcodeScanner.Camera.;
 				scanImage.rectTransform.localEulerAngles = new Vector3(0, 0, orient);
 				scanImage.rectTransform.localScale = new Vector3(Ratio, scaleY, 1);
 #endif
-
 			scanImage.texture = BarcodeScanner.Camera.Texture;
-
-			// Keep Image Aspect Ratio
-			var rect = scanImage.GetComponent<RectTransform>();
-			var newHeight = rect.sizeDelta.x * BarcodeScanner.Camera.Height / BarcodeScanner.Camera.Width;
-			rect.sizeDelta = new Vector2(rect.sizeDelta.x, newHeight);
 
 			RestartTime = Time.realtimeSinceStartup;
 		};

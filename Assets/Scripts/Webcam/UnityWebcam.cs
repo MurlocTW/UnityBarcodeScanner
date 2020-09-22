@@ -12,6 +12,9 @@ namespace BarcodeScanner.Webcam
 		public int Width { get; private set; }
 		public int Height { get; private set; }
 
+		public int RequestedWidth { get { return Webcam.requestedWidth; } }
+		public int RequestedHeight { get { return Webcam.requestedHeight; } }
+
 		public UnityWebcam() : this(new ScannerSettings())
 		{
 		}

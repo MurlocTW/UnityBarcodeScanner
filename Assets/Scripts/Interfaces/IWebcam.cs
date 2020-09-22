@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 namespace BarcodeScanner
 {
@@ -8,6 +8,8 @@ namespace BarcodeScanner
 		Texture Texture { get; }
 		int Width { get; }
 		int Height { get; }
+		int RequestedWidth { get; }
+		int RequestedHeight { get; }
 
 		//
 		void SetSize();

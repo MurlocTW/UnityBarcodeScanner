@@ -45,5 +45,10 @@ public class Boot : MonoBehaviour
 		SceneManager.LoadScene("MoblieDemo");
 	}
 
+	public void OnClickMobileDebug()
+	{
+		SceneManager.LoadScene("MoblieDebug");
+	}
+
 	#endregion
 }
